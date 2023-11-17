@@ -1,0 +1,32 @@
+/*
+ * This is the main class where I create a for loop that produces a specific output:
+ * -4
+ * 14
+ * 32
+ * 50
+ * 68
+ * 86
+ */
+public class SimpleLoop 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		//call a method that prints a specific output
+		countSomeNums();
+
+	}
+
+	private static void countSomeNums() 
+	{
+		//create a for loop that increments a number while adding 18 and printing the result
+		for (int i=-4; i<87; i+=18) 
+		{
+			System.out.println(i);
+		}
+			
+		
+	}
+
+}
