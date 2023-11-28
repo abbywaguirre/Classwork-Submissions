@@ -1,0 +1,79 @@
+
+public class Cake 
+{
+	//properties of cakes
+	
+	//a property that stores the cake's flavor 
+	String flavor = new String ("carrot");
+	
+	//declare an int for layers
+	int layers;
+	
+	/**
+	 * This allows us to instantiate an object.
+	 * We always instantiate cake with layers.
+	 *  
+	 * @param type determines the flavor of the cake
+	 */
+	public Cake(String type) 
+	{
+		//assign a flavor to this pie as it is created 
+		this.flavor = type;
+		
+		//assign this cake layers
+		this.layers = 1;
+	}
+	
+	public Cake(String str, int z)
+	{
+		//assign a flavor to this pie as it is created 
+		this.flavor = str;
+		
+		this.layers = z;
+	}
+	
+	/**
+	 * print/tell me what flavor the cake is. The object will have different filling
+	 * depending on the user's input when making the cake.
+	 */
+	public void getFlavor () 
+	{
+		System.out.println("this cake's flavor is " + this.flavor);
+	}
+	
+	/**
+	 * this will print the amount of layers the cake has which will always be one
+	 */
+	public void getLayers()
+	{
+		System.out.println("the cake has " + layers + " layer(s)");
+	}
+	
+	/**
+	 * This method allows the user to change the flavor of the cake after it is 
+	 * already instantiated.
+	 * @param newFlavor newFlavor resets the original flavor given to the cake
+	 */
+	public void setFlavor(String newFlavor)
+	{
+		this.flavor = newFlavor;
+	}
+	
+	/**
+	 * This method should print/tell me if the pie is tasty
+	 * All cakes are yummy so this method will always tell me the cake is tasty.
+	 */
+	public static void tellIfTasty () 
+	{
+		//print statement to tell us it's tasty
+		System.out.println("the cake is sooooo tasty");	
+	}
+	
+	/**
+	 * This method always adds one to the amount of layers
+	 */
+	public void incrementLayer ()
+	{
+		this.layers++;
+	}
+}
