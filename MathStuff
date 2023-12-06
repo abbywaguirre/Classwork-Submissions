@@ -1,0 +1,63 @@
+
+public class MathStuff {
+
+	public static void main(String[] args)
+	{
+		//declare two numbers to test Math methods on
+		int myInt = -4;
+		double myDub = -16.0;
+		
+		//test the sqrt method - find square root
+		double mySqrt = Math.sqrt(myDub);
+		System.out.println(mySqrt);
+		
+		//test the abs method - returns absolute value
+		double myAbsDub = Math.abs(myDub);
+		System.out.println(myAbsDub);
+		
+		double myAbsInt = Math.abs(myInt);
+		System.out.println(myAbsInt);
+		
+		//test the pow method
+		int base = 2;
+		int exp = 5;
+		double prod = Math.pow(base, exp);
+		System.out.println(prod);
+
+		//print a random number [1-10]
+		int maxNumber = 10;
+		int minNumber = 1;
+		double randomNumber = Math.random() * (maxNumber - minNumber);
+		Math.round(randomNumber);
+		System.out.println(randomNumber);
+
+		/////////////////////////////////////////////////////////////////////////////
+		
+		//multiplication assignment
+		/**
+		 * calls a method that is passed two ints and multiplies them
+		 * a method to multiply two numbers
+		 */
+		multTwoNums(5, 2);
+
+	}
+
+	/**
+	 * This method multiplies two ints by adding an int multiple
+	 * times rather than using a multiplication sign
+	 * @param i first int
+	 * @param j second int
+	 */
+	private static void multTwoNums(int x, int y) 
+	{
+		//for loop to increment y
+		int result = 0;
+		for (int i = 0; i < x; i++) 
+		{
+			result += y;
+		}
+		//print the result
+		System.out.print(x + " multiplied by " + y + " equals " + result);
+	}
+
+}
