@@ -1,0 +1,116 @@
+import java.util.Scanner;
+public class IfsAndLoops {
+
+	public static void main(String[] args) 
+	{
+		//tell user what to do
+		System.out.println("scan in two ints and I will tell you whether they are even or odd");
+				
+		//TASK 1: Scan in two ints and store them as Integers called 'x' and 'y.'
+		Scanner integerTaker = new Scanner(System.in);
+		
+		System.out.println("type the first int");
+		Integer x = integerTaker.nextInt();
+		System.out.println("type the second int");
+		Integer y = integerTaker.nextInt();
+		
+		
+		//close the scanner
+		integerTaker.close();
+		
+		//TASK 2: Call a method named "printEvenOrOdd." Pass it x and y. This method 
+		//should print whether or not they are both odd, both even, or if they are different.
+		printEvenOrOdd(x, y);
+		
+		//TASK 3: Call a method named "printExpTable" that will be passed x and y print the
+		//exponent table of x to the y. If either number is negative, print an error message instead
+		printExpTable(x, y);
+		
+		//TASK 4: Call a method named "getFact()" that will return the factorial of a 
+		//number. If it is negative, instead print an error message and return -1. 
+		//In the main method, add a print statement that will print 
+		//"The value of the factorial is (the returned value)."
+		//getFact(x);
+		System.out.println(getFact(x));
+		
+	}
+	
+	/*
+	 * (TASK 2) This method prints whether the integers are both even or both odd. 
+	 * Otherwise the method prints which integer is odd and which is even.
+	 */
+	private static void printEvenOrOdd(Integer x, Integer y) 
+	{
+		//if statement
+		if (x % 2 == 0 && y % 2 == 0) 
+		{
+			System.out.println("both " + x + " and " + y + " are even");
+		}
+		else if (x % 2 != 0 && y % 2 != 0)
+		{
+			System.out.println("both " + x + " and " + y + " are odd");
+		}
+		else if (x % 2 == 0 && y % 2 != 0) 
+		{
+			System.out.println(x + " is even but " + y + " is odd");
+		}
+		else if (y % 2 == 0 && x % 2 != 0) 
+		{
+			System.out.println(y + " is even but " + x + " is odd");
+		}	
+		
+	}
+	
+	/*
+	 * (TASK 3) This method prints the exponent table of the first integer to the second
+	 * if either integer is negative print error message
+	 */
+	private static void printExpTable(Integer x, Integer y) 
+	{
+
+		for (int i = 1; i <= y; i++) 
+		{
+			if (x >= 0 && y >= 0)
+			{
+				double base = (double)x;
+				double expo = (double)i;
+				double answer = Math.pow(base, expo);
+				System.out.println(x + " to the " + i + " equals " + answer);
+			}
+			else
+			{
+				System.out.println("ERROR ERROR ERROR ERROR");
+				break;
+			}
+			
+		}
+		
+	}
+	/*
+	 * (TASK 4) returns the factorial of a number 
+	 */
+	private static Integer getFact(Integer n) 
+	{
+			int i = n;
+			//return factorial of n using while loop
+			while (i > 1) 
+			{
+				n = n * i;
+				n--;
+				if (n >= 0)
+				{
+				System.out.print("your factorial is ");
+				return n;
+				}
+				else 
+				{
+				System.out.println("ERROR ERROR NO NO NO");
+				}
+
+			}
+			return -1;
+		
+	}
+}
+
+
