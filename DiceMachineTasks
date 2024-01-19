@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class DiceMachineFinalTask 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner numTaker = new Scanner(System.in);
+		
+		//tell user what to do 
+		System.out.println("");
+		
+		//scan in string
+		String a = numTaker.nextLine();
+		
+		//print the result of method rollDice 
+		System.out.println("their sum is " + rollDice(a));
+		
+		//close the scanner
+		numTaker.close();
+		
+	}
+
+	/*
+	 * this method takes in a string in the format (xdy) and separates the
+	 * ints x and y by the d
+	 * it rolls the y-faced dice x times and adds all the rolls together in the loop
+	 */
+	private static int rollDice(String str) 
+	{
+		//separate left and right of string by the d
+		String left = str.substring(0, str.indexOf('d'));
+		String right = str.substring(str.indexOf('d') + 1, str.length());
+		
+		//change the strings to ints
+		int x = Integer.valueOf(left);
+		int y = Integer.valueOf(right);
+		
+		//int to add the rolls to in loop
+		int hold = 0;
+		
+		//loop to roll dice w/ #y faces #x times and add them together
+		for (int i = 1; i < x + 1; i++) 
+		{
+			int adder = (int)((double)Math.random() * y + 1);
+			hold += adder;
+		}
+		//tell user what they rolled
+		System.out.println("you rolled " + x + " " + y + "-faced dice");
+		//return the result
+		return hold;
+		
+	}
+
+}
